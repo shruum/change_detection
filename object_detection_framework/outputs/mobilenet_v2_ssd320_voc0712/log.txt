@@ -1,0 +1,170 @@
+2019-07-17 11:11:36,731 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:11:36,731 SSD.trainer INFO: Namespace(config_file='configs/mobilenet_v2_ssd320_voc0712.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:11:36,731 SSD.trainer INFO: Loaded configuration file configs/mobilenet_v2_ssd320_voc0712.yaml
+2019-07-17 11:11:36,731 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 21
+  BOX_PREDICTOR: 'SSDLiteBoxPredictor'
+  BACKBONE:
+    NAME: 'mobilenet_v2'
+    OUT_CHANNELS: (96, 1280, 512, 256, 256, 64)
+  PRIORS:
+    FEATURE_MAPS: [20, 10, 5, 3, 2, 1]
+    STRIDES: [16, 32, 64, 100, 150, 300]
+    MIN_SIZES: [60, 105, 150, 195, 240, 285]
+    MAX_SIZES: [105, 150, 195, 240, 285, 330]
+    ASPECT_RATIOS: [[2, 3], [2, 3], [2, 3], [2, 3], [2, 3], [2, 3]]
+    BOXES_PER_LOCATION: [6, 6, 6, 6, 6, 6]
+INPUT:
+  IMAGE_SIZE: 320
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 120000
+  LR_STEPS: [80000, 100000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/mobilenet_v2_ssd320_voc0712'
+2019-07-17 11:11:36,732 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 320
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: mobilenet_v2
+    OUT_CHANNELS: (96, 1280, 512, 256, 256, 64)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDLiteBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 21
+  PRIORS:
+    ASPECT_RATIOS: [[2, 3], [2, 3], [2, 3], [2, 3], [2, 3], [2, 3]]
+    BOXES_PER_LOCATION: [6, 6, 6, 6, 6, 6]
+    CLIP: True
+    FEATURE_MAPS: [20, 10, 5, 3, 2, 1]
+    MAX_SIZES: [105, 150, 195, 240, 285, 330]
+    MIN_SIZES: [60, 105, 150, 195, 240, 285]
+    STRIDES: [16, 32, 64, 100, 150, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/mobilenet_v2_ssd320_voc0712
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [80000, 100000]
+  MAX_ITER: 120000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:11:38,836 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:11:48,894 SSD.trainer INFO: Start training ...
+2019-07-17 11:13:49,574 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:13:49,574 SSD.trainer INFO: Namespace(config_file='configs/mobilenet_v2_ssd320_voc0712.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:13:49,574 SSD.trainer INFO: Loaded configuration file configs/mobilenet_v2_ssd320_voc0712.yaml
+2019-07-17 11:13:49,574 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 21
+  BOX_PREDICTOR: 'SSDLiteBoxPredictor'
+  BACKBONE:
+    NAME: 'mobilenet_v2'
+    OUT_CHANNELS: (96, 1280, 512, 256, 256, 64)
+  PRIORS:
+    FEATURE_MAPS: [20, 10, 5, 3, 2, 1]
+    STRIDES: [16, 32, 64, 100, 150, 300]
+    MIN_SIZES: [60, 105, 150, 195, 240, 285]
+    MAX_SIZES: [105, 150, 195, 240, 285, 330]
+    ASPECT_RATIOS: [[2, 3], [2, 3], [2, 3], [2, 3], [2, 3], [2, 3]]
+    BOXES_PER_LOCATION: [6, 6, 6, 6, 6, 6]
+INPUT:
+  IMAGE_SIZE: 320
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 120000
+  LR_STEPS: [80000, 100000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/mobilenet_v2_ssd320_voc0712'
+2019-07-17 11:13:49,575 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 320
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: mobilenet_v2
+    OUT_CHANNELS: (96, 1280, 512, 256, 256, 64)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDLiteBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 21
+  PRIORS:
+    ASPECT_RATIOS: [[2, 3], [2, 3], [2, 3], [2, 3], [2, 3], [2, 3]]
+    BOXES_PER_LOCATION: [6, 6, 6, 6, 6, 6]
+    CLIP: True
+    FEATURE_MAPS: [20, 10, 5, 3, 2, 1]
+    MAX_SIZES: [105, 150, 195, 240, 285, 330]
+    MIN_SIZES: [60, 105, 150, 195, 240, 285]
+    STRIDES: [16, 32, 64, 100, 150, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/mobilenet_v2_ssd320_voc0712
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [80000, 100000]
+  MAX_ITER: 120000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:13:49,657 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:13:59,746 SSD.trainer INFO: Start training ...

@@ -1,0 +1,78 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-seg-one-debug
+  namespace: navinfo
+spec:
+  template:
+    spec:
+      containers:
+### JOB CONTAINER POD
+      - name: container-seg-one
+        image: nvcr.io/navinfo/aicv/shabbir_pytorch_template:latest
+        resources:
+          limits:
+            # Reserver 1 GPU's or multiple is the job needs these
+            nvidia.com/gpu: 4
+        command: ["/bin/sh"]
+        args: ["-c","echo starting job;cp -r /input/codebase/Shabbir/cabinet_star /git/;sleep 6000;echo ending job"]
+#        command: ["/bin/bash"]
+#        args: ["-c","python /git/common/libs/nie_GAN_lib/BSS_GAN/train_Map2HAD.py \
+#--src_data_path /input/Mapillary_v1.1 --trg_data_path /input/nie_HAD --val_data_path /input/Mapillary_v1.1 \
+#--log_dir /output/Map2HAD/log_bs2_3 --gen_img_dir /output/Map2HAD/generated_imgs_bs2_3 \
+#--batch_size 2 --cuda_device_id 0 --chkpts /output/Map2HAD/weight_bs2_3 --n_classes 66 --model_save_freq 500 \
+#--crop_size 256 512 --val_size 256 512 " ]
+
+        volumeMounts:
+        - name: git-volume
+          mountPath: /git
+        - name: input
+          mountPath: /input
+        - name: output
+          mountPath: /output
+        - name: dshm
+          mountPath: /dev/shm
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: nvcr-credentials
+      nodeSelector:
+        gpu-servers: aicv
+#        kubernetes.io/hostname: nides031
+#        kubernetes.io/hostname: dgx03
+### INIT CONTAINER POD
+      initContainers:
+#       # - name: git-clone
+#       #   image: alpine/git
+#       #   args:
+#       #     - clone
+#       #     - -b
+#       #     - fpn
+#       #     - https://$(BITBUCKET_USER):$(BITBUCKET_PASS)@bitbucket.navinfo.eu/scm/one/cabinet_star.git
+#       #     - /git
+#       #   env:
+#       #     - name: BITBUCKET_USER
+#       #       valueFrom:
+#       #         configMapKeyRef:
+#       #          name: bitbucket
+#       #          key: BITBUCKET_USER
+#       #     - name: BITBUCKET_PASS
+#       #       valueFrom:
+#       #         configMapKeyRef:
+#       #          name: bitbucket
+#       #          key: BITBUCKET_PASS
+#         volumeMounts:
+#         - name: git-volume
+#           mountPath: /git
+      volumes:
+      - name: git-volume
+        emptyDir: {}
+      - name: input
+        hostPath:
+          path: /data/input/
+      - name: output
+        hostPath:
+          path: /data/output/shabbir/init_test/
+      - name: dshm
+        emptyDir:
+          medium: Memory
+

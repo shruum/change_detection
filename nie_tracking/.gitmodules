@@ -1,0 +1,12 @@
+[submodule "pytracking"]
+	path = visual_tracking/pytracking
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/tp/pytracking.git
+[submodule "classifier_pytorch"]
+	path = visual_tracking/classifier_pytorch
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/ai/classifier_pytorch.git
+[submodule "tracking_by_detection/kiout"]
+	path = tracking_by_detection/kiout
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/tp/kiout.git
+[submodule "tracking_by_detection/kalman_filter_multi_object_tracking"]
+	path = tracking_by_detection/kalman_filter_multi_object_tracking
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/tp/kalman_filter_multi_object_tracking.git

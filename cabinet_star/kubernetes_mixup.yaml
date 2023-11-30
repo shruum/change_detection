@@ -1,0 +1,99 @@
+### replace $USER and $ID with your username and user id
+### replace $CHECKNAME with your experiment name
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cabinet-star-adrian-mixupfixeded2
+  namespace: navinfo
+spec:
+  template:
+    spec:
+
+### JOB CONTAINER POD
+      containers:
+      - name: cabinet-star-adrian-mixupfixeded2
+        image: nvcr.io/navinfo/aicv/cabinet_star:19.09.04
+        resources:
+          limits:
+            # Reserver 1 GPU's or multiple is the job needs these
+            nvidia.com/gpu: 1
+
+        command: ["/bin/sh"]
+        args: ["-c","echo starting job;\
+        cd /git/experiments/segmentation/ && \
+        python train_with_data_parallel.py
+        --model bisenet
+        --backbone resnet18
+        --batch-size 16
+        --data-folder /input/datasets/cityscape_processed
+        --lr 0.025
+        --optimizer sgd
+        --momentum 0.9
+        --lr-scheduler poly
+        --checkname cs512pre-mixupfixeded2
+        --epochs 1000
+        --save-dir /output/runs512pre/
+        --dataset citys
+        --multiple-GPUs False
+        --save-interval 10
+        --base-size 1024
+        --crop-size 512
+        --pretrained
+        --em
+        --mixup-alpha 1.0
+        --workers 16; \
+        echo ending job"]
+
+        volumeMounts:
+        - name: git-volume
+          mountPath: /git
+        - name: input
+          mountPath: /input
+        - name: output
+          mountPath: /output
+        - name: dshm
+          mountPath: /dev/shm
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: nvcr-credentials
+      nodeSelector:
+        gpu-servers: aicv
+
+### INIT CONTAINER POD
+      initContainers:
+      - name: git-clone
+        image: alpine/git
+        args:
+          - clone
+          - --depth
+          - "1"
+          - -b
+          - AISEG-419-fix-mixup
+          - https://$(BITBUCKET_USER):$(BITBUCKET_PASS)@bitbucket.navinfo.eu/scm/one/cabinet_star.git
+          - /git
+        env:
+          - name: BITBUCKET_USER
+            valueFrom:
+              configMapKeyRef:
+               name: bitbucket
+               key: BITBUCKET_USER
+          - name: BITBUCKET_PASS
+            valueFrom:
+              configMapKeyRef:
+               name: bitbucket
+               key: BITBUCKET_PASS
+        volumeMounts:
+        - name: git-volume
+          mountPath: /git
+      volumes:
+      - name: git-volume
+        emptyDir: {}
+      - name: input
+        hostPath:
+          path: /data/input/
+      - name: output
+        hostPath:
+          path: /data/output/adrian.staniec/
+      - name: dshm
+        emptyDir:
+          medium: Memory

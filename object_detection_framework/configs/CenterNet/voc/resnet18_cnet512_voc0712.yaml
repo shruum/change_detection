@@ -1,0 +1,36 @@
+MODEL:
+  NUM_CLASSES: 20
+  BACKBONE:
+    NAME: 'resnet18'
+    OUT_CHANNEL: 512
+    FEATURE_MAPS: (16,)
+    EXTRA: True
+  HEAD:
+    NAME: 'CenterNetHead'
+    BACKBONE_FEATURE: 16
+    HEAD_CONFIG: {'hm':20, 'wh': 2, 'reg': 2}
+    LOSS_WEIGHTS: {'hm':1, 'wh': 0.1, 'reg': 1}
+    NUM_DECONV_LAYERS: 3
+    DECONV_LAYER_CONFIG: [256, 128, 64]
+    DECONV_KERNEL: [4, 4, 4]
+    HEAD_CONV: 64
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("voc_2007_trainval", "voc_2012_trainval")
+  TEST: ("voc_2007_test", )
+DATA_LOADER:
+  NUM_WORKERS: 8
+  INCLUDE_BACKGROUND: False
+SOLVER:
+  NAME: 'SGD_optimizer'
+  MAX_ITER: 120000
+  LR_STEPS: [80000, 100000]
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 1e-4
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+TEST:
+  BATCH_SIZE: 10
+OUTPUT_DIR: '/outputs/resnet18_cnet512_voc0712'

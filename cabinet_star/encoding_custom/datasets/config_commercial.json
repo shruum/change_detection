@@ -1,0 +1,1679 @@
+{
+  "labels": [
+    {
+      "color": [
+        165, 
+        42, 
+        42
+      ], 
+      "instances": true, 
+      "readable": "Bird", 
+      "name": "animal--bird", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        192, 
+        0
+      ], 
+      "instances": true, 
+      "readable": "Ground Animal", 
+      "name": "animal--ground-animal", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": false, 
+      "readable": "Acoustic Barrier", 
+      "name": "construction--barrier--acoustic", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        31
+      ], 
+      "instances": false, 
+      "readable": "Ambiguous Barrier", 
+      "name": "construction--barrier--ambiguous", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        32
+      ], 
+      "instances": false, 
+      "readable": "Concrete Block", 
+      "name": "construction--barrier--concrete-block", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        196, 
+        196, 
+        196
+      ], 
+      "instances": false, 
+      "readable": "Curb", 
+      "name": "construction--barrier--curb", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        190, 
+        153, 
+        153
+      ], 
+      "instances": false, 
+      "readable": "Fence", 
+      "name": "construction--barrier--fence", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        180, 
+        165, 
+        180
+      ], 
+      "instances": false, 
+      "readable": "Guard Rail", 
+      "name": "construction--barrier--guard-rail", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        90, 
+        120, 
+        150
+      ], 
+      "instances": false, 
+      "readable": "Barrier", 
+      "name": "construction--barrier--other-barrier", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        33
+      ], 
+      "instances": false, 
+      "readable": "Road Median", 
+      "name": "construction--barrier--road-median", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        34
+      ], 
+      "instances": false, 
+      "readable": "Road Side", 
+      "name": "construction--barrier--road-side", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        128, 
+        128, 
+        128
+      ], 
+      "instances": false, 
+      "readable": "Lane Separator", 
+      "name": "construction--barrier--separator", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        35
+      ], 
+      "instances": true, 
+      "readable": "Temporary Barrier", 
+      "name": "construction--barrier--temporary", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        102, 
+        102, 
+        156
+      ], 
+      "instances": false, 
+      "readable": "Wall", 
+      "name": "construction--barrier--wall", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        128, 
+        64, 
+        255
+      ], 
+      "instances": false, 
+      "readable": "Bike Lane", 
+      "name": "construction--flat--bike-lane", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        140, 
+        140, 
+        200
+      ], 
+      "instances": true, 
+      "readable": "Crosswalk - Plain", 
+      "name": "construction--flat--crosswalk-plain", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        170, 
+        170, 
+        170
+      ], 
+      "instances": false, 
+      "readable": "Curb Cut", 
+      "name": "construction--flat--curb-cut", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        36
+      ], 
+      "instances": true, 
+      "readable": "Driveway", 
+      "name": "construction--flat--driveway", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        160
+      ], 
+      "instances": false, 
+      "readable": "Parking", 
+      "name": "construction--flat--parking", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        37
+      ], 
+      "instances": false, 
+      "readable": "Parking Aisle", 
+      "name": "construction--flat--parking-aisle", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        96, 
+        96, 
+        96
+      ], 
+      "instances": false, 
+      "readable": "Pedestrian Area", 
+      "name": "construction--flat--pedestrian-area", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        230, 
+        150, 
+        140
+      ], 
+      "instances": false, 
+      "readable": "Rail Track", 
+      "name": "construction--flat--rail-track", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        128, 
+        64, 
+        128
+      ], 
+      "instances": false, 
+      "readable": "Road", 
+      "name": "construction--flat--road", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        110, 
+        110, 
+        110
+      ], 
+      "instances": false, 
+      "readable": "Road Shoulder", 
+      "name": "construction--flat--road-shoulder", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        110, 
+        110, 
+        110
+      ], 
+      "instances": false, 
+      "readable": "Service Lane", 
+      "name": "construction--flat--service-lane", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        244, 
+        35, 
+        232
+      ], 
+      "instances": false, 
+      "readable": "Sidewalk", 
+      "name": "construction--flat--sidewalk", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        128, 
+        196, 
+        128
+      ], 
+      "instances": false, 
+      "readable": "Traffic Island", 
+      "name": "construction--flat--traffic-island", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        150, 
+        100, 
+        100
+      ], 
+      "instances": false, 
+      "readable": "Bridge", 
+      "name": "construction--structure--bridge", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        70, 
+        70, 
+        70
+      ], 
+      "instances": false, 
+      "readable": "Building", 
+      "name": "construction--structure--building", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        150, 
+        150, 
+        150
+      ], 
+      "instances": false, 
+      "readable": "Garage", 
+      "name": "construction--structure--garage", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        150, 
+        120, 
+        90
+      ], 
+      "instances": false, 
+      "readable": "Tunnel", 
+      "name": "construction--structure--tunnel", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        220, 
+        20, 
+        60
+      ], 
+      "instances": true, 
+      "readable": "Person", 
+      "name": "human--person--individual", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        220, 
+        20, 
+        60
+      ], 
+      "instances": false, 
+      "readable": "Person Group", 
+      "name": "human--person--person-group", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        255, 
+        0, 
+        0
+      ], 
+      "instances": true, 
+      "readable": "Bicyclist", 
+      "name": "human--rider--bicyclist", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        255, 
+        0, 
+        100
+      ], 
+      "instances": true, 
+      "readable": "Motorcyclist", 
+      "name": "human--rider--motorcyclist", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        255, 
+        0, 
+        200
+      ], 
+      "instances": true, 
+      "readable": "Other Rider", 
+      "name": "human--rider--other-rider", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        255, 
+        255, 
+        255
+      ], 
+      "instances": false, 
+      "readable": "Lane Marking - Dashed Line", 
+      "name": "marking--continuous--dashed", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        255, 
+        255, 
+        255
+      ], 
+      "instances": false, 
+      "readable": "Lane Marking - Straight Line", 
+      "name": "marking--continuous--solid", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        29
+      ], 
+      "instances": false, 
+      "readable": "Lane Marking - Zigzag Line", 
+      "name": "marking--continuous--zigzag", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        28
+      ], 
+      "instances": false, 
+      "readable": "Lane Marking - Ambiguous", 
+      "name": "marking--discrete--ambiguous", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        27
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Ambiguous)", 
+      "name": "marking--discrete--arrow--ambiguous", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        26
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Left)", 
+      "name": "marking--discrete--arrow--left", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        25
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Other)", 
+      "name": "marking--discrete--arrow--other", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        24
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Right)", 
+      "name": "marking--discrete--arrow--right", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        23
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Split Left or Right)", 
+      "name": "marking--discrete--arrow--split-left-or-right", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        22
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Split Left or Straight)", 
+      "name": "marking--discrete--arrow--split-left-or-straight", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        18
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Split L/R or Straight)", 
+      "name": "marking--discrete--arrow--split-left-right-or-straight", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        21
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Split Right or Straight)", 
+      "name": "marking--discrete--arrow--split-right-or-straight", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        20
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (Straight)", 
+      "name": "marking--discrete--arrow--straight", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        19
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Arrow (U-Turn)", 
+      "name": "marking--discrete--arrow--u-turn", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        255, 
+        255, 
+        255
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Crosswalk", 
+      "name": "marking--discrete--crosswalk-zebra", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        19
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Give Way (Row)", 
+      "name": "marking--discrete--give-way-row", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        18
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Give Way (Single)", 
+      "name": "marking--discrete--give-way-single", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        17
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Graphics (Ambiguous)", 
+      "name": "marking--discrete--graphics--ambiguous", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        16
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Graphics (Bicycle)", 
+      "name": "marking--discrete--graphics--bicycle", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        15
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Graphics (Other)", 
+      "name": "marking--discrete--graphics--other", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        14
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Graphics (Pedestrian)", 
+      "name": "marking--discrete--graphics--pedestrian", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        13
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Graphics (Wheelchair)", 
+      "name": "marking--discrete--graphics--wheelchair", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        12
+      ], 
+      "instances": false, 
+      "readable": "Lane Marking - Hatched (Chevron)", 
+      "name": "marking--discrete--hatched--chevron", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        11
+      ], 
+      "instances": false, 
+      "readable": "Lane Marking - Hatched (Diagonal)", 
+      "name": "marking--discrete--hatched--diagonal", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        255, 
+        255, 
+        255
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Other", 
+      "name": "marking--discrete--other-marking", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        255, 
+        255, 
+        255
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Stop Line", 
+      "name": "marking--discrete--stop-line", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        14
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (30)", 
+      "name": "marking--discrete--text--30", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        13
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (40)", 
+      "name": "marking--discrete--text--40", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        12
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (50)", 
+      "name": "marking--discrete--text--50", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        10
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (Ambiguous)", 
+      "name": "marking--discrete--text--ambiguous", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        9
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (Bus)", 
+      "name": "marking--discrete--text--bus", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        6
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (Other)", 
+      "name": "marking--discrete--text--other", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        5
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (School)", 
+      "name": "marking--discrete--text--school", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        4
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (Slow)", 
+      "name": "marking--discrete--text--slow", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        3
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (Stop)", 
+      "name": "marking--discrete--text--stop", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        2
+      ], 
+      "instances": true, 
+      "readable": "Lane Marking - Text (Taxi)", 
+      "name": "marking--discrete--text--taxi", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        128, 
+        32, 
+        32
+      ], 
+      "instances": false, 
+      "readable": "Beach", 
+      "name": "nature--beach", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        64, 
+        170, 
+        64
+      ], 
+      "instances": false, 
+      "readable": "Mountain", 
+      "name": "nature--mountain", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        230, 
+        160, 
+        50
+      ], 
+      "instances": false, 
+      "readable": "Sand", 
+      "name": "nature--sand", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        70, 
+        130, 
+        180
+      ], 
+      "instances": false, 
+      "readable": "Sky", 
+      "name": "nature--sky", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        190, 
+        255, 
+        255
+      ], 
+      "instances": false, 
+      "readable": "Snow", 
+      "name": "nature--snow", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        152, 
+        251, 
+        152
+      ], 
+      "instances": false, 
+      "readable": "Terrain", 
+      "name": "nature--terrain", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        107, 
+        142, 
+        35
+      ], 
+      "instances": false, 
+      "readable": "Vegetation", 
+      "name": "nature--vegetation", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        170, 
+        30
+      ], 
+      "instances": false, 
+      "readable": "Water", 
+      "name": "nature--water", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        255, 
+        255, 
+        128
+      ], 
+      "instances": true, 
+      "readable": "Banner", 
+      "name": "object--banner", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        0, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Bench", 
+      "name": "object--bench", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        100, 
+        140, 
+        180
+      ], 
+      "instances": true, 
+      "readable": "Bike Rack", 
+      "name": "object--bike-rack", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        220, 
+        128, 
+        128
+      ], 
+      "instances": true, 
+      "readable": "Catch Basin", 
+      "name": "object--catch-basin", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        222, 
+        40, 
+        40
+      ], 
+      "instances": true, 
+      "readable": "CCTV Camera", 
+      "name": "object--cctv-camera", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        100, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Fire Hydrant", 
+      "name": "object--fire-hydrant", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        40, 
+        40, 
+        40
+      ], 
+      "instances": true, 
+      "readable": "Junction Box", 
+      "name": "object--junction-box", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        33, 
+        33, 
+        33
+      ], 
+      "instances": true, 
+      "readable": "Mailbox", 
+      "name": "object--mailbox", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        100, 
+        128, 
+        160
+      ], 
+      "instances": true, 
+      "readable": "Manhole", 
+      "name": "object--manhole", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        20, 
+        20, 
+        255
+      ], 
+      "instances": true, 
+      "readable": "Parking Meter", 
+      "name": "object--parking-meter", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        142, 
+        0, 
+        0
+      ], 
+      "instances": true, 
+      "readable": "Phone Booth", 
+      "name": "object--phone-booth", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        70, 
+        100, 
+        150
+      ], 
+      "instances": false, 
+      "readable": "Pothole", 
+      "name": "object--pothole", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        111, 
+        74, 
+        0
+      ], 
+      "instances": false, 
+      "readable": "Ramp", 
+      "name": "object--ramp", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        171, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Signage - Advertisement", 
+      "name": "object--sign--advertisement", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        172, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Signage - Ambiguous", 
+      "name": "object--sign--ambiguous", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        250, 
+        173, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Signage - Back", 
+      "name": "object--sign--back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        174, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Signage - Information", 
+      "name": "object--sign--information", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        175, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Signage - Other", 
+      "name": "object--sign--other", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        176, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Signage - Store", 
+      "name": "object--sign--store", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        210, 
+        170, 
+        100
+      ], 
+      "instances": true, 
+      "readable": "Street Light", 
+      "name": "object--street-light", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        153, 
+        153, 
+        153
+      ], 
+      "instances": true, 
+      "readable": "Pole", 
+      "name": "object--support--pole", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        153, 
+        153, 
+        153
+      ], 
+      "instances": false, 
+      "readable": "Pole Group", 
+      "name": "object--support--pole-group", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        128, 
+        128, 
+        128
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign Frame", 
+      "name": "object--support--traffic-sign-frame", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        80
+      ], 
+      "instances": true, 
+      "readable": "Utility Pole", 
+      "name": "object--support--utility-pole", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        210, 
+        60, 
+        60
+      ], 
+      "instances": true, 
+      "readable": "Traffic Cone", 
+      "name": "object--traffic-cone", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Ambiguous", 
+      "name": "object--traffic-light--ambiguous", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        250, 
+        180, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Cyclists (Back)", 
+      "name": "object--traffic-light--cyclists-back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Cyclists (Front)", 
+      "name": "object--traffic-light--cyclists-front", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        160, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Cyclists (Side)", 
+      "name": "object--traffic-light--cyclists-side", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Horizontal/Back)", 
+      "name": "object--traffic-light--general-horizontal-back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Horizontal/Front)", 
+      "name": "object--traffic-light--general-horizontal-front", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Horizontal/Side)", 
+      "name": "object--traffic-light--general-horizontal-side", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        204, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Single/Back)", 
+      "name": "object--traffic-light--general-single-back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        187, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Single/Front)", 
+      "name": "object--traffic-light--general-single-front", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        201, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Single/Side)", 
+      "name": "object--traffic-light--general-single-side", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Upright/Back)", 
+      "name": "object--traffic-light--general-upright-back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Upright/Front)", 
+      "name": "object--traffic-light--general-upright-front", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - General (Upright/Side)", 
+      "name": "object--traffic-light--general-upright-side", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Other", 
+      "name": "object--traffic-light--other", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        213, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Pedestrians (Back)", 
+      "name": "object--traffic-light--pedestrians-back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        170, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Pedestrians (Front)", 
+      "name": "object--traffic-light--pedestrians-front", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        218, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Pedestrians (Side)", 
+      "name": "object--traffic-light--pedestrians-side", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        250, 
+        223, 
+        30
+      ], 
+      "instances": true, 
+      "readable": "Traffic Light - Warning", 
+      "name": "object--traffic-light--warning", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        192, 
+        192, 
+        192
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign - Ambiguous", 
+      "name": "object--traffic-sign--ambiguous", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        192, 
+        192, 
+        192
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign (Back)", 
+      "name": "object--traffic-sign--back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        192, 
+        192, 
+        192
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign - Direction (Back)", 
+      "name": "object--traffic-sign--direction-back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        220, 
+        220, 
+        0
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign - Direction (Front)", 
+      "name": "object--traffic-sign--direction-front", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        220, 
+        220, 
+        0
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign (Front)", 
+      "name": "object--traffic-sign--front", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        196
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign - Parking", 
+      "name": "object--traffic-sign--information-parking", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        192, 
+        192, 
+        192
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign - Temporary (Back)", 
+      "name": "object--traffic-sign--temporary-back", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        220, 
+        220, 
+        0
+      ], 
+      "instances": true, 
+      "readable": "Traffic Sign - Temporary (Front)", 
+      "name": "object--traffic-sign--temporary-front", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        140, 
+        140, 
+        20
+      ], 
+      "instances": true, 
+      "readable": "Trash Can", 
+      "name": "object--trash-can", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        119, 
+        11, 
+        32
+      ], 
+      "instances": true, 
+      "readable": "Bicycle", 
+      "name": "object--vehicle--bicycle", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        150, 
+        0, 
+        255
+      ], 
+      "instances": true, 
+      "readable": "Boat", 
+      "name": "object--vehicle--boat", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        60, 
+        100
+      ], 
+      "instances": true, 
+      "readable": "Bus", 
+      "name": "object--vehicle--bus", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        142
+      ], 
+      "instances": true, 
+      "readable": "Car", 
+      "name": "object--vehicle--car", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        90
+      ], 
+      "instances": true, 
+      "readable": "Caravan", 
+      "name": "object--vehicle--caravan", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        230
+      ], 
+      "instances": true, 
+      "readable": "Motorcycle", 
+      "name": "object--vehicle--motorcycle", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        80, 
+        100
+      ], 
+      "instances": true, 
+      "readable": "On Rails", 
+      "name": "object--vehicle--on-rails", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        128, 
+        64, 
+        64
+      ], 
+      "instances": true, 
+      "readable": "Other Vehicle", 
+      "name": "object--vehicle--other-vehicle", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        110
+      ], 
+      "instances": true, 
+      "readable": "Trailer", 
+      "name": "object--vehicle--trailer", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        70
+      ], 
+      "instances": true, 
+      "readable": "Truck", 
+      "name": "object--vehicle--truck", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        142
+      ], 
+      "instances": false, 
+      "readable": "Vehicle Group", 
+      "name": "object--vehicle--vehicle-group", 
+      "evaluate": false
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        192
+      ], 
+      "instances": true, 
+      "readable": "Wheeled Slow", 
+      "name": "object--vehicle--wheeled-slow", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        170, 
+        170, 
+        170
+      ], 
+      "instances": true, 
+      "readable": "Water Valve", 
+      "name": "object--water-valve", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        110, 
+        110, 
+        110
+      ], 
+      "instances": false, 
+      "readable": "Wire Group", 
+      "name": "object--wire-group", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        32, 
+        32, 
+        32
+      ], 
+      "instances": false, 
+      "readable": "Car Mount", 
+      "name": "void--car-mount", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        111, 
+        74, 
+        0
+      ], 
+      "instances": false, 
+      "readable": "Dynamic", 
+      "name": "void--dynamic", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        120, 
+        10, 
+        10
+      ], 
+      "instances": false, 
+      "readable": "Ego Vehicle", 
+      "name": "void--ego-vehicle", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        81, 
+        0, 
+        81
+      ], 
+      "instances": false, 
+      "readable": "Ground", 
+      "name": "void--ground", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        111, 
+        111, 
+        0
+      ], 
+      "instances": false, 
+      "readable": "Static", 
+      "name": "void--static", 
+      "evaluate": true
+    }, 
+    {
+      "color": [
+        0, 
+        0, 
+        0
+      ], 
+      "instances": false, 
+      "readable": "Unlabeled", 
+      "name": "void--unlabeled", 
+      "evaluate": false
+    }
+  ], 
+  "version": "1.2", 
+  "mapping": "mvd12", 
+  "folder_structure": "{split}/{content}/{key:.{22}}.{ext}"
+}

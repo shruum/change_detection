@@ -1,0 +1,1490 @@
+2019-07-17 10:43:29,027 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 10:43:29,027 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 10:43:29,027 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 10:43:29,027 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 10:43:29,027 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 10:43:38,700 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 10:46:22,012 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 10:46:22,012 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 10:46:22,012 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 10:46:22,012 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 10:46:22,013 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 10:46:24,340 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 10:47:59,117 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 10:47:59,118 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 10:47:59,119 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 10:47:59,119 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 10:47:59,121 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 10:48:01,555 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 10:51:57,277 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 10:51:57,277 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 10:51:57,277 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 10:51:57,278 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 10:51:57,278 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 10:51:59,681 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 10:56:50,639 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 10:56:50,639 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 10:56:50,639 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 10:56:50,639 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 10:56:50,639 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 10:56:53,062 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 10:58:05,910 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 10:58:05,910 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 10:58:05,910 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 10:58:05,910 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 10:58:05,910 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 10:58:08,333 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 10:58:23,087 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 10:58:23,087 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 10:58:23,087 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 10:58:23,087 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 10:58:23,088 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 10:58:25,462 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 10:58:52,684 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 10:58:52,684 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 10:58:52,684 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 10:58:52,685 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 10:58:52,685 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 10:58:55,052 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 10:59:05,053 SSD.trainer INFO: Start training ...
+2019-07-17 11:00:46,837 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:00:46,837 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:00:46,837 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:00:46,837 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:00:46,837 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:00:49,207 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:00:59,154 SSD.trainer INFO: Start training ...
+2019-07-17 11:01:26,012 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:01:26,012 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:01:26,012 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:01:26,012 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:01:26,013 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:01:28,404 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:01:38,443 SSD.trainer INFO: Start training ...
+2019-07-17 11:02:40,743 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:02:40,743 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:02:40,743 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:02:40,743 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:02:40,743 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:02:43,205 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:02:53,218 SSD.trainer INFO: Start training ...
+2019-07-17 11:03:14,730 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:03:14,730 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:03:14,730 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:03:14,730 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:03:14,730 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:03:17,124 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:03:27,142 SSD.trainer INFO: Start training ...
+2019-07-17 11:06:50,440 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:06:50,440 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:06:50,440 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:06:50,440 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:06:50,441 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:06:52,825 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:07:02,912 SSD.trainer INFO: Start training ...
+2019-07-17 11:09:48,278 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:09:48,278 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:09:48,278 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:09:48,279 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:09:48,279 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: mobilenet_v2
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:09:52,279 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:10:02,354 SSD.trainer INFO: Start training ...
+2019-07-17 11:17:41,610 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:17:41,610 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:17:41,611 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:17:41,611 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_val")
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:17:41,611 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train', 'coco_2014_val')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: mobilenet_v2
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:17:41,819 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:17:52,028 SSD.trainer INFO: Start training ...
+2019-07-17 11:18:33,099 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:18:33,099 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:18:33,099 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:18:33,099 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", )
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:18:33,099 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: mobilenet_v2
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:18:33,352 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:18:39,938 SSD.trainer INFO: Start training ...
+2019-07-17 11:19:09,560 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:19:09,560 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:19:09,560 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:19:09,560 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", )
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:19:09,560 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cuda
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:19:11,955 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:19:18,514 SSD.trainer INFO: Start training ...
+2019-07-17 11:19:33,500 SSD.trainer INFO: Using 1 GPUs
+2019-07-17 11:19:33,500 SSD.trainer INFO: Namespace(config_file='configs/vgg_ssd512_coco_trainval35k.yaml', distributed=False, eval_step=2500, local_rank=0, log_step=10, num_gpus=1, opts=[], save_step=2500, skip_test=False, use_tensorboard=True)
+2019-07-17 11:19:33,500 SSD.trainer INFO: Loaded configuration file configs/vgg_ssd512_coco_trainval35k.yaml
+2019-07-17 11:19:33,500 SSD.trainer INFO: 
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+  PRIORS:
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 512
+DATASETS:
+  TRAIN: ("coco_2014_train", )
+  TEST: ("coco_2014_val", )
+SOLVER:
+  MAX_ITER: 520000
+  LR_STEPS: [360000, 480000]
+  GAMMA: 0.1
+  BATCH_SIZE: 24
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/ssd/vgg_ssd512_coco_trainval35k'
+2019-07-17 11:19:33,500 SSD.trainer INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_val',)
+  TRAIN: ('coco_2014_train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 512
+  PIXEL_MEAN: [123, 117, 104]
+LOGGER:
+  NAME: SSD.trainer
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256, 256)
+    PRETRAINED: True
+  BOX_PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  HEAD:
+    NAME: SSDBoxHead
+  META_ARCHITECTURE: TwoPhasesDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 81
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [64, 32, 16, 8, 4, 2, 1]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8, 542.72]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    STRIDES: [8, 16, 32, 64, 128, 256, 512]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/ssd/vgg_ssd512_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 24
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [360000, 480000]
+  MAX_ITER: 520000
+  MOMENTUM: 0.9
+  NAME: SGD_optimizer
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2019-07-17 11:19:33,845 SSD.trainer.trainer INFO: No checkpoint found.
+2019-07-17 11:19:40,410 SSD.trainer INFO: Start training ...
+2019-07-17 11:25:50,028 SSD.trainer INFO: iter: 000010, lr: 0.00035, total_loss: 26.026 (26.026), reg_loss: 3.385 (3.385), cls_loss: 22.641 (22.641), time: 36.955 (36.955), eta: 222 days, 9:52:55, mem: 0M
+2019-07-17 11:32:11,234 SSD.trainer INFO: iter: 000020, lr: 0.00036, total_loss: 21.150 (23.588), reg_loss: 3.198 (3.291), cls_loss: 17.953 (20.297), time: 38.121 (37.538), eta: 225 days, 21:56:27, mem: 0M
+2019-07-17 11:38:35,413 SSD.trainer INFO: iter: 000030, lr: 0.00037, total_loss: 20.751 (22.642), reg_loss: 3.122 (3.235), cls_loss: 17.629 (19.407), time: 38.418 (37.831), eta: 227 days, 16:12:06, mem: 0M

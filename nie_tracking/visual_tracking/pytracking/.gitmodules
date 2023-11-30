@@ -1,0 +1,3 @@
+[submodule "ltr/external/PreciseRoIPooling"]
+	path = ltr/external/PreciseRoIPooling
+	url = ssh://git@navbitbucket01.navinfo.eu:7999/tp/preciseroipooling.git

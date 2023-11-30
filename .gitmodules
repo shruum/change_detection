@@ -1,0 +1,15 @@
+[submodule "cabinet_star"]
+	path = cabinet_star
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/ai/cabinet_star.git
+[submodule "object_detection_framework"]
+	path = object_detection_framework
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/arl/object_detection_framework.git
+[submodule "nie_utilities"]
+	path = nie_utilities
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/arl/nie_utilities.git
+[submodule "visualization/bbox_visualizer"]
+	path = visualization/bbox_visualizer
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/tp/bbox_visualizer.git
+[submodule "nie_tracking"]
+	path = nie_tracking
+	url = ssh://git@ssh.bitbucket.cms.navinfo.cloud:7999/arl/nie_tracking.git
